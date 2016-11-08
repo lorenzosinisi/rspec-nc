@@ -9,12 +9,11 @@ class Nc < RSpec::Core::Formatters::BaseFormatter
 
   def dump_summary(notification)
     body = "Finished in #{notification.formatted_duration}\n#{notification.totals_line}"
-    title = if notification.failure_count > 0
-      "#{FAILURE_EMOJI} #{directory_name}: #{notification.failure_count} failed example#{notification.failure_count == 1 ? nil : 's'}"
-    else
-      "#{SUCCESS_EMOJI} #{directory_name}: Success"
+    if notification.failure_count > 0
+      title = "#{FAILURE_EMOJI} #{directory_name}: #{notification.failure_count} failed example#{notification.failure_count == 1 ? nil : 's'}"
+      notify title, body
     end
-    notify title, body
+    
   end
 
   private
