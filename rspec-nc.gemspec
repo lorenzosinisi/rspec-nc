@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.license = 'MIT'
 
   gem.add_dependency 'terminal-notifier', '>= 1.4'
-  gem.add_dependency 'rspec', '~> 2.3'
+  gem.add_dependency 'rspec', '>= 3.0'
 
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'pry'
