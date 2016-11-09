@@ -1,4 +1,4 @@
-RSpec Notification Center
+RSpec Notification Center (this is a draft, do not use it in production)
 =========================
 
 [![Build Status](https://img.shields.io/travis/twe4ked/rspec-nc.svg?style=flat-square)](https://travis-ci.org/twe4ked/rspec-nc)
@@ -26,7 +26,19 @@ in your .rspec file:
 
 ```
 --format Nc
+
 ```
+
+or 
+
+```
+NcConfig.configure do |config|
+  config.constraint        = :only_on_faliure
+  config.notification_type = :dump_summary # or :example_failed
+  config.success_emoji     = "\u2705"
+  config.faliure_emoji     = "\u26D4"
+end
+```    
 
 Contributing
 ------------
